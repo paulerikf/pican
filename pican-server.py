@@ -33,15 +33,15 @@ time_0 = now()
 sender = Thread(target= cangen.sending)
 sender.start()
 
-reader0 = Thread(target= send_tcp(can0_socket, conn, time_0))
-reader1 = Thread(target= send_tcp(can1_socket, conn, time_0))
+reader0 = Thread(target=send_tcp, args=(can0_socket, conn, time_0))
+reader1 = Thread(target=send_tcp, args=(can1_socket, conn, time_0))
 
 
 def send_tcp(can_socket, tcp_socket, start_time):
     while True:
         recv_msg = can_socket.recv(256)
 
-        t = now() - start_time
+        t = int(round(time() * 1000)) - start_time
         t_array = [n for n in struct.pack('Q', t)]
         # print('msg:', [hex(m) for m in recv_msg])
 
