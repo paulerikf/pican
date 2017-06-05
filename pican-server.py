@@ -34,7 +34,9 @@ sender = Thread(target= cangen.sending)
 sender.start()
 
 reader0 = Thread(target=send_tcp, args=(can0_socket, conn, time_0))
+reader0.start()
 reader1 = Thread(target=send_tcp, args=(can1_socket, conn, time_0))
+reader1.start()
 
 
 def send_tcp(can_socket, tcp_socket, start_time):
