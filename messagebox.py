@@ -4,6 +4,8 @@ i = 0
 def msg():
     global i
     can_id = [
+        # Example:  CAN ID - 0x123
+        # [0x23, 0x1, 0, 0, 0, 0, 0, 0]
         # AMK Inverter Status
         [0x84, 0x2, 0, 0, 0, 0, 0, 0],  # 0
         [0x85, 0x2, 0, 0, 0, 0, 0, 0],  # 1
