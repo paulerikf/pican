@@ -19,7 +19,7 @@ print('Listening on ', TCP_IP, ':', TCP_PORT, sep='')
 conn, addr = tcp_socket.accept()
 print('Connection address:', addr)
 bus0 = False
-now = lambda: int(round(time() * 1000))
+now = lambda: int(round(time() * 1000000))
 time_0 = now()
 i = 0
 
@@ -44,4 +44,4 @@ while True:
 
     conn.send(bytearray(msg))
 
-    sleep(0.1)
+    sleep(0.0001)
